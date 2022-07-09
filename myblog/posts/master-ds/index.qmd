@@ -1,0 +1,29 @@
+---
+title: "Master ds"
+author: "Luigi Aceto"
+date: "2022-07-09"
+categories: [news, code, analysis]
+image: "image.jpg"
+---
+
+Agenda
+
+-   Shiny
+-   flexdashboard
+-   Quarto
+-   se tempo a disposizione shinydashboard
+
+Risorse divise per argomento
+
+-   bookmarks
+    -   libri
+    -   vignette
+    -   siti web
+    -   domande su stackoverflow
+    -   projetti di ML
+    -   news
+    -   blog
+    -   repo di github
+    -   presentazioni slides
+    -   tutorials
+-   r scripts

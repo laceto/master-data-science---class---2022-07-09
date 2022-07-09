@@ -1,0 +1,16 @@
+{
+  "hash": "c371985e12b4e8d2733ed75486ed35e8",
+  "result": {
+    "markdown": "---\ntitle: \"Master ds\"\nauthor: \"Luigi Aceto\"\ndate: \"2022-07-09\"\ncategories: [news, code, analysis]\nimage: \"image.jpg\"\n---\n\n\n- Shiny\n- flexdashboard\n- Quarto \n\n\n\n\n\n\n::: {.cell}\n::: {.cell-output-display}\n![](index_files/figure-html/plot-penguins-1.png){width=672}\n:::\n:::\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

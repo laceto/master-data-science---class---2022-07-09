@@ -1,0 +1,16 @@
+{
+  "hash": "5c8b12d008524a1545589eeee0b1a8a3",
+  "result": {
+    "markdown": "---\ntitle: \"Master DS\"\nauthor: \"Luigi Aceto\"\ndate: \"2022-07-08\"\n\n\n---\n\n\n\n::: {.cell}\n::: {.cell-output-display}\n![](index_files/figure-html/plot-penguins-1.png){width=672}\n:::\n:::",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
