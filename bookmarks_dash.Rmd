@@ -1,0 +1,99 @@
+---
+title: "R Analytics Bookmarks"
+output: 
+  flexdashboard::flex_dashboard:
+    #orientation: rows
+    social: menu
+    source_code: embed
+runtime: shiny
+---
+
+```{r setup, include=FALSE}
+
+knitr::opts_chunk$set(echo = FALSE, eval = TRUE, comment = FALSE, warning = FALSE, include = FALSE)
+
+library(flexdashboard)
+# library(ggmap)
+library(dplyr)
+# library(stringr)
+# library(tidyr)
+# library(purrr)
+# library(readxl)
+# library(leaflet)
+# library(htmltools)
+library(DT)
+library(readr)
+library(shiny)
+```
+
+```{r}
+bookmarks <- readr::read_rds("bookmarks.rds") %>% 
+  dplyr::rename(
+    title = a,
+    url = b,
+    category = c
+  ) %>% 
+  dplyr::relocate(category, .before = title
+  )
+# %>% 
+#   dplyr::mutate(
+#     url = paste0("<a href='",url,"'>",url,"</a>")
+#   )
+
+bookmarks$url <- sapply(bookmarks$url, function(x) 
+  toString(tags$a(href=paste0("http://", x), x)))
+  
+bookmarks <- bookmarks %>%
+  dplyr::filter(
+    stringr::str_detect(title, ".pdf$", negate = T)
+  )
+
+```
+
+
+```{r}
+
+selectedData <- reactive({
+  bookmarks %>%
+    dplyr::filter(category == input$select)
+})
+
+
+
+
+```
+
+Bookmarks  {data-orientation=rows}
+===================================== 
+
+Column {.sidebar}
+-----------------------------------------------------------------------
+
+```{r, include=TRUE}
+
+selectInput("select", label = h3("Select topic"), choices = unique(bookmarks$category))
+
+```
+
+Row
+-----------------------------------------------------------------------
+
+###
+
+```{r, include=TRUE}
+
+renderDataTable(expr = datatable(
+  selectedData(), 
+  escape=FALSE
+  ),
+  options = list(
+    autoWidth = T
+    )
+  )
+
+# DTOutput('table')
+
+```
+
+
+
